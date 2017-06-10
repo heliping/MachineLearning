@@ -73,7 +73,7 @@ def stocGradAscent0(dataMatrix, classLabels):
         h = sigmoid(sum(dataMatrix[i]*weights))
         error = classLabels[i] - h
         # 0.01*(1*1)*(1*n)
-        print weights, "*"*10 , dataMatrix[i], "*"*10 , error
+        print (weights, "*"*10 , dataMatrix[i], "*"*10 , error)
         weights = weights + alpha * error * dataMatrix[i]
     return weights
 
@@ -85,7 +85,7 @@ def stocGradAscent1(dataMatrix, classLabels, numIter=150):
     # 随机剃度, 循环150,观察是否收敛
     for j in range(numIter):
         # [0, 1, 2 .. m-1]
-        dataIndex = range(m)
+        dataIndex = list(range(m))
         for i in range(m):
             # i和j的不断增大，导致alpha的值不断减少，但是不为0
             alpha = 4/(1.0+j+i)+0.0001    #apha decreases with iteration, does not
@@ -131,7 +131,7 @@ def plotBestFit(dataArr, labelMat, weights):
 
 def main():
     # 1.收集并准备数据
-    dataMat, labelMat = loadDataSet("input/5.Logistic/TestSet.txt")
+    dataMat, labelMat = loadDataSet("D:/python_source/MachineLearning/input/5.Logistic/TestSet.txt")
 
     # print dataMat, '---\n', labelMat
     # 2.训练模型，  f(x)=a1*x1+b2*x2+..+nn*xn中 (a1,b2, .., nn).T的矩阵值

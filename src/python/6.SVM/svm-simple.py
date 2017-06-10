@@ -229,18 +229,18 @@ def plotfig_SVM(xMat, yMat, ws, b, alphas):
 
 if __name__ == "__main__":
     # 获取特征和目标变量
-    dataArr, labelArr = loadDataSet('input/6.SVM/testSet.txt')
+    dataArr, labelArr = loadDataSet('D:/python_source/MachineLearning/input/6.SVM/testSet.txt')
     # print labelArr
 
     # b是常量值， alphas是拉格朗日乘子
     b, alphas = smoSimple(dataArr, labelArr, 0.6, 0.001, 40)
-    print '/n/n/n'
-    print 'b=', b
-    print 'alphas[alphas>0]=', alphas[alphas > 0]
-    print 'shape(alphas[alphas > 0])=', shape(alphas[alphas > 0])
+    print ('/n/n/n')
+    print ('b=', b)
+    print ('alphas[alphas>0]=', alphas[alphas > 0])
+    print ('shape(alphas[alphas > 0])=', shape(alphas[alphas > 0]))
     for i in range(100):
         if alphas[i] > 0:
-            print dataArr[i], labelArr[i]
+            print (dataArr[i], labelArr[i])
     # 画图
     ws = calcWs(alphas, dataArr, labelArr)
     plotfig_SVM(dataArr, labelArr, ws, b, alphas)

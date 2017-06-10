@@ -52,7 +52,7 @@ def setOfWords2Vec(vocabList, inputSet):
         if word in vocabList:
             returnVec[vocabList.index(word)] = 1
         else:
-            print "the word: %s is not in my Vocabulary!" % word
+            print ("the word: %s is not in my Vocabulary!" % word)
     return returnVec
 
 
@@ -177,10 +177,10 @@ def testingNB():
     # 5. 测试数据
     testEntry = ['love', 'my', 'dalmation']
     thisDoc = array(setOfWords2Vec(myVocabList, testEntry))
-    print testEntry, 'classified as: ', classifyNB(thisDoc, p0V, p1V, pAb)
+    print (testEntry, 'classified as: ', classifyNB(thisDoc, p0V, p1V, pAb))
     testEntry = ['stupid', 'garbage']
     thisDoc = array(setOfWords2Vec(myVocabList, testEntry))
-    print testEntry, 'classified as: ', classifyNB(thisDoc, p0V, p1V, pAb)
+    print (testEntry, 'classified as: ', classifyNB(thisDoc, p0V, p1V, pAb))
 
 
 if __name__ == "__main__":
